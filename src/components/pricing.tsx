@@ -132,7 +132,7 @@ const Pricing = () => {
                             </div>
 
                             <AnimationContainer animation="fadeUp" delay={1 + (index * 0.2)}>
-                                <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button
                                         variant={plan.popular ? "default" : "secondary"}
                                         className="w-full"

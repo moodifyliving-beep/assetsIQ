@@ -97,7 +97,7 @@ const Navbar = () => {
                                     </Button>
                                 </Link>
                             ) : (
-                                <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button size="sm">
                                         Get started
                                     </Button>
@@ -138,7 +138,7 @@ const Navbar = () => {
 
                         <AnimationContainer animation="fadeLeft" delay={0.1}>
                             <div className="flex items-center justify-center gap-x-4">
-                                <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button size="sm">
                                         Get started
                                     </Button>
@@ -196,7 +196,7 @@ const Navbar = () => {
                                         </Button>
                                     </Link>
                                 ) : (
-                                    <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
+                                    <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer" className="w-full">
                                         <Button
                                             onClick={() => setOpen(false)}
                                             variant="default"

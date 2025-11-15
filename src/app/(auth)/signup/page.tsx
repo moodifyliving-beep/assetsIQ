@@ -213,7 +213,9 @@ const SignUpPage = () => {
             <p className="text-center text-sm text-muted-foreground">
                 Already have an account?{" "}
                 <Link
-                    href="/signin"
+                    href="https://asset-iq.vercel.app/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="underline underline-offset-4 hover:text-primary"
                 >
                     Sign in

@@ -82,7 +82,7 @@ const VideoHero = () => {
                         {/* CTA Buttons */}
                         <AnimationContainer animation="fadeUp" delay={0.8}>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-2 sm:mt-4">
-                                <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button
                                         size="lg"
                                         className="bg-neutral-900 text-white hover:bg-neutral-800 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold shadow-xl w-full sm:w-auto"

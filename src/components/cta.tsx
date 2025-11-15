@@ -93,7 +93,7 @@ const CTA = () => {
                     </AnimationContainer>
 
                     <AnimationContainer animation="fadeUp" delay={1}>
-                        <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                             <Button size="lg" className="mt-6">
                                 Start now
                                 <ArrowRightIcon className="size-4 ml-2" />

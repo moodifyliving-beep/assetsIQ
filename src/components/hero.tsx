@@ -42,7 +42,7 @@ const Hero = () => {
 
                     <AnimationContainer animation="fadeUp" delay={0.8}>
                         <div className="w-full">
-                            <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                 <Button size="md" className="w-full md:w-auto">
                                     Start free trial
                                 </Button>
