@@ -6,6 +6,7 @@ import { useRef } from "react";
 import AnimationContainer from "./global/animation-container";
 import Wrapper from "./global/wrapper";
 import { Card, CardContent } from "./ui/card";
+import SectionBadge from "./ui/section-badge";
 
 const SecurityTrust = () => {
     const shieldRef = useRef<HTMLDivElement>(null);
@@ -68,6 +69,11 @@ const SecurityTrust = () => {
                 {/* Left Side - Security Features */}
                 <div className="flex flex-col gap-8">
                     <AnimationContainer animation="fadeUp" delay={0.2}>
+                        <div className="w-fit">
+                            <SectionBadge title="Security & Trust" />
+                        </div>
+                    </AnimationContainer>
+                    <AnimationContainer animation="fadeUp" delay={0.3}>
                         <div className="flex flex-col gap-4">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                                 Security & Trust
@@ -82,7 +88,7 @@ const SecurityTrust = () => {
                         {securityFeatures.map((feature, index) => {
                             const IconComponent = feature.icon;
                             return (
-                                <AnimationContainer key={index} animation="fadeUp" delay={0.3 + index * 0.1}>
+                                <AnimationContainer key={index} animation="fadeUp" delay={0.4 + index * 0.1}>
                                     <div className="flex gap-4 items-start group">
                                         <div className="flex-shrink-0 mt-1">
                                             <motion.div
@@ -109,7 +115,7 @@ const SecurityTrust = () => {
                 </div>
 
                 {/* Right Side - Security Rating Card with 3D Shield */}
-                <AnimationContainer animation="fadeRight" delay={0.4}>
+                <AnimationContainer animation="fadeRight" delay={0.5}>
                     <Card className="relative overflow-hidden border-2 bg-card/50 backdrop-blur-sm shadow-xl">
                         <CardContent className="p-8 lg:p-10">
                             <div className="flex flex-col items-center text-center gap-6">
