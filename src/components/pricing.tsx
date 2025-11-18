@@ -77,11 +77,9 @@ const Pricing = () => {
                             <div className="flex flex-col gap-4 mb-8">
                                 <h3 className="text-xl font-medium">{plan.name}</h3>
                                 <div className="flex items-baseline gap-2">
-                                    <NumberFlow
-                                        value={isYearly ? plan.price.yearly : plan.price.monthly}
-                                        format={(value) => `$${Math.round(value)}`}
-                                        className="text-4xl font-bold"
-                                    />
+                                    <span className="text-4xl font-bold">
+                                        ${Math.round(isYearly ? plan.price.yearly : plan.price.monthly)}
+                                    </span>
                                     <span className="text-muted-foreground">/{isYearly ? t("pricing.perYear") : t("pricing.perMonth")}</span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">{plan.description}</p>
