@@ -1,6 +1,9 @@
+"use client";
+
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from "./global/animation-container";
 import Wrapper from "./global/wrapper";
 import { Button } from "./ui/button";
@@ -23,6 +26,8 @@ const HIGHLIGHTS = [
 ];
 
 const CTA = () => {
+    const { t } = useLanguage();
+    
     return (
         <Wrapper className="py-20 lg:py-32">
             <div className="flex flex-col items-center text-center relative gap-4 py-20 lg:py-32 overflow-hidden z-0">
@@ -50,18 +55,18 @@ const CTA = () => {
 
                 <div className="flex flex-col items-center justify-center w-full z-30">
                     <AnimationContainer animation="fadeUp" delay={0.3}>
-                        <SectionBadge title="Start now" />
+                        <SectionBadge title={t("cta.badge")} />
                     </AnimationContainer>
 
                     <AnimationContainer animation="fadeUp" delay={0.4}>
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-neutral-400">
-                        Start Building Your Real Estate Portfolio Today?
+                        {t("cta.title")}
                         </h2>
                     </AnimationContainer>
 
                     <AnimationContainer animation="fadeUp" delay={0.5}>
                         <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-lg mx-auto mt-4">
-                            Sign up for a free trial and see how PropEase can help you manage your properties.
+                            {t("cta.description")}
                         </p>
                     </AnimationContainer>
 
@@ -70,7 +75,7 @@ const CTA = () => {
                             <div className="rounded-full px-4 py-2.5 bg-neutral-900 flex flex-wrap md:flex-row items-center justify-center gap-4">
                                 {HIGHLIGHTS.map((item, index) => (
                                     <AnimationContainer
-                                        key={index}
+                                        key={`highlight-${index}`}
                                         animation="fadeRight"
                                         delay={0.7 + (index * 0.1)}
                                     >
@@ -95,7 +100,7 @@ const CTA = () => {
                     <AnimationContainer animation="fadeUp" delay={1}>
                         <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                             <Button size="lg" className="mt-6">
-                                Start now
+                                {t("cta.badge")}
                                 <ArrowRightIcon className="size-4 ml-2" />
                             </Button>
                         </Link>

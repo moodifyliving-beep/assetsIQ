@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "功能",
+    "pricing": "定价",
+    "contact": "联系"
+  },
+  "common": {
+    "getStarted": "开始使用",
+    "dashboard": "仪表板",
+    "startFreeTrial": "开始免费试用",
+    "joinCommunity": "加入社区"
+  },
+  "videoHero": {
+    "badge": "将每项资产转化为每日收入",
+    "title": "数字化买卖全球资产并赚取收益",
+    "subtitle": "从房地产到黄金和股票"
+  },
+  "hero": {
+    "badge": "受到10,000+用户信赖",
+    "title": "像股票一样投资房地产",
+    "description": "由合规区块链自动化驱动的零碎房地产股份。用您想要的金额开始投资。",
+    "trustedBy": "受到行业领导者信赖"
+  },
+  "cta": {
+    "badge": "立即开始",
+    "title": "今天开始建立您的房地产投资组合？",
+    "description": "注册免费试用，了解ProPEase如何帮助您管理您的房产。"
+  },
+  "testimonials": {
+    "badge": "客户评价",
+    "title": "深受房地产专业人士喜爱",
+    "subtitle": "看看我们的用户对我们平台体验的评价"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "智能物业管理",
+      "description": "使用我们的人工智能仪表板轻松管理多个房产。跟踪租金支付和维护计划。"
+    },
+    "realTimeAnalytics": {
+      "title": "实时分析",
+      "description": "通过实时分析跟踪房产浏览量、潜在客户和收入。"
+    },
+    "smartTransactionHub": {
+      "title": "智能交易中心",
+      "description": "在一个地方安全地处理房产交易，从报价到数字合同和付款。"
+    },
+    "instantPropertyValuation": {
+      "title": "即时房产估值",
+      "description": "获得由人工智能和大数据驱动的实时市场估值，以做出明智的定价决策。"
+    }
+  }
+}
+

@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from "./global/animation-container";
 import Wrapper from "./global/wrapper";
 import { Button } from "./ui/button";
@@ -30,6 +31,8 @@ const properties = [
 ];
 
 const VideoHero = () => {
+    const { t } = useLanguage();
+    
     return (
         <>
             {/* Video Section - Optimized for Top */}
@@ -59,7 +62,7 @@ const VideoHero = () => {
                                     variant="outline"
                                     className="bg-neutral-900/80 backdrop-blur-sm border-neutral-700 text-white hover:bg-neutral-800/80 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium"
                                 >
-                                    Turn Every Asset Into Daily Income
+                                    {t("videoHero.badge")}
                                     <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2" />
                                 </Button>
                             </Link>
@@ -68,14 +71,14 @@ const VideoHero = () => {
                         {/* Main Headline */}
                         <AnimationContainer animation="fadeUp" delay={0.4}>
                             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight text-white max-w-5xl">
-                                Buy, Sell & Earn from Global Assets Digitally
+                                {t("videoHero.title")}
                             </h1>
                         </AnimationContainer>
 
                         {/* Subheading */}
                         <AnimationContainer animation="fadeUp" delay={0.6}>
                             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 max-w-2xl px-4">
-                                From real-estate to Gold & Stocks
+                                {t("videoHero.subtitle")}
                             </p>
                         </AnimationContainer>
 
@@ -87,7 +90,7 @@ const VideoHero = () => {
                                         size="lg"
                                         className="bg-neutral-900 text-white hover:bg-neutral-800 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold shadow-xl w-full sm:w-auto"
                                     >
-                                        Get Started
+                                        {t("common.getStarted")}
                                     </Button>
                                 </Link>
                                 <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -96,7 +99,7 @@ const VideoHero = () => {
                                         variant="outline"
                                         className="border-2 border-white text-white hover:bg-white/10 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold backdrop-blur-sm w-full sm:w-auto"
                                     >
-                                        Join Community
+                                        {t("common.joinCommunity")}
                                         <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                                     </Button>
                                 </Link>
@@ -121,7 +124,7 @@ const VideoHero = () => {
                             <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4 lg:-ml-6">
                                 {properties.map((property, index) => (
                                     <CarouselItem
-                                        key={index}
+                                        key={`property-${index}`}
                                         className="pl-2 sm:pl-3 md:pl-4 lg:pl-6 basis-[85%] sm:basis-[75%] md:basis-[65%] lg:basis-1/3"
                                     >
                                         <div className="relative group">

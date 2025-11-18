@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "contact": "Contact"
+  },
+  "common": {
+    "getStarted": "Commencer",
+    "dashboard": "Tableau de bord",
+    "startFreeTrial": "Commencer l'essai gratuit",
+    "joinCommunity": "Rejoindre la communauté"
+  },
+  "videoHero": {
+    "badge": "Transformez chaque actif en revenu quotidien",
+    "title": "Achetez, vendez et gagnez avec des actifs mondiaux numériquement",
+    "subtitle": "De l'immobilier à l'or et aux actions"
+  },
+  "hero": {
+    "badge": "Approuvé par plus de 10 000 utilisateurs",
+    "title": "Investissez dans l'immobilier comme des actions",
+    "description": "Parts immobilières fractionnées alimentées par l'automatisation blockchain conforme. Commencez à investir avec ce que vous voulez.",
+    "trustedBy": "Approuvé par les leaders de l'industrie"
+  },
+  "cta": {
+    "badge": "Commencer maintenant",
+    "title": "Commencez à construire votre portefeuille immobilier aujourd'hui ?",
+    "description": "Inscrivez-vous pour un essai gratuit et découvrez comment PropEase peut vous aider à gérer vos propriétés."
+  },
+  "testimonials": {
+    "badge": "Témoignages",
+    "title": "Adoré par les professionnels de l'immobilier",
+    "subtitle": "Découvrez ce que nos utilisateurs disent de leur expérience avec notre plateforme"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "Gestion intelligente des propriétés",
+      "description": "Gérez plusieurs propriétés sans effort avec notre tableau de bord alimenté par l'IA. Suivez les paiements de loyer et les horaires de maintenance."
+    },
+    "realTimeAnalytics": {
+      "title": "Analyses en temps réel",
+      "description": "Suivez les vues de propriétés, les leads et les revenus grâce à des analyses en temps réel."
+    },
+    "smartTransactionHub": {
+      "title": "Hub de transactions intelligent",
+      "description": "Gérez les transactions immobilières en toute sécurité en un seul endroit, des offres aux contrats numériques et paiements."
+    },
+    "instantPropertyValuation": {
+      "title": "Évaluation instantanée des propriétés",
+      "description": "Obtenez des évaluations de marché en temps réel alimentées par l'IA et le big data pour des décisions de prix éclairées."
+    }
+  }
+}
+

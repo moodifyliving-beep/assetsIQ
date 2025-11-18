@@ -1,26 +1,31 @@
+"use client";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
 import { FAQS } from '@/constants';
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from './global/animation-container';
 import Wrapper from "./global/wrapper";
 import SectionBadge from './ui/section-badge';
 
 const FAQ = () => {
+    const { t } = useLanguage();
+    
     return (
         <Wrapper className="py-20 lg:py-32">
             <div className="flex flex-col items-center text-center gap-4">
                 <AnimationContainer animation="fadeUp" delay={0.2}>
-                    <SectionBadge title="FAQ" />
+                    <SectionBadge title={t("faq.badge")} />
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.3}>
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-neutral-400">
-                        Still have questions?
+                        {t("faq.title")}
                     </h2>
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.4}>
                     <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Find answers to common questions about our PropEase
+                        {t("faq.description")}
                     </p>
                 </AnimationContainer>
             </div>
@@ -29,7 +34,7 @@ const FAQ = () => {
                 <Accordion type="single" collapsible className="w-full space-y-4">
                     {FAQS.map((item, index) => (
                         <AnimationContainer
-                            key={index}
+                            key={`faq-${index}`}
                             animation="fadeUp"
                             delay={0.5 + (index * 0.1)}
                         >

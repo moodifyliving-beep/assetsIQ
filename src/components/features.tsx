@@ -1,26 +1,31 @@
+"use client";
+
 import { FEATURES } from '@/constants';
 import Image from 'next/image';
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from './global/animation-container';
 import Wrapper from "./global/wrapper";
 import SectionBadge from './ui/section-badge';
 
 const Features = () => {
+    const { t } = useLanguage();
+    
     return (
         <Wrapper className="py-20 lg:py-32">
             <div className="flex flex-col items-center text-center gap-4 mb-16">
                 <AnimationContainer animation="fadeUp" delay={0.2}>
-                    <SectionBadge title="Platform Features" />
+                    <SectionBadge title={t("features.badge")} />
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.3}>
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-neutral-400">
-                        Manage properties smarter
+                        {t("features.title")}
                     </h2>
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.4}>
                     <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Experience the future of real estate with our all-in-one platform for seamless property management.
+                        {t("features.description")}
                     </p>
                 </AnimationContainer>
             </div>
@@ -33,10 +38,10 @@ const Features = () => {
                                 <AnimationContainer animation="fadeUp" delay={0.6}>
                                     <div className="space-y-4">
                                         <h3 className="text-xl md:text-2xl font-medium">
-                                            {FEATURES[0].title}
+                                            {t("features.smartPropertyManagement.title")}
                                         </h3>
                                         <p className="text-sm md:text-base text-muted-foreground max-w-md">
-                                            {FEATURES[0].description}
+                                            {t("features.smartPropertyManagement.description")}
                                         </p>
                                     </div>
                                 </AnimationContainer>
@@ -60,10 +65,10 @@ const Features = () => {
                                 <AnimationContainer animation="fadeUp" delay={0.7}>
                                     <div className="space-y-4">
                                         <h3 className="text-xl md:text-2xl font-medium">
-                                            {FEATURES[1].title}
+                                            {t("features.realTimeAnalytics.title")}
                                         </h3>
                                         <p className="text-sm md:text-base text-muted-foreground max-w-md">
-                                            {FEATURES[1].description}
+                                            {t("features.realTimeAnalytics.description")}
                                         </p>
                                     </div>
                                 </AnimationContainer>
@@ -89,10 +94,10 @@ const Features = () => {
                                 <AnimationContainer animation="fadeUp" delay={0.8}>
                                     <div className="space-y-4">
                                         <h3 className="text-xl md:text-2xl font-medium">
-                                            {FEATURES[2].title}
+                                            {t("features.smartTransactionHub.title")}
                                         </h3>
                                         <p className="text-sm md:text-base text-muted-foreground max-w-md">
-                                            {FEATURES[2].description}
+                                            {t("features.smartTransactionHub.description")}
                                         </p>
                                     </div>
                                 </AnimationContainer>
@@ -116,10 +121,10 @@ const Features = () => {
                                 <AnimationContainer animation="fadeUp" delay={0.9}>
                                     <div className="space-y-4">
                                         <h3 className="text-xl md:text-2xl font-medium">
-                                            {FEATURES[3].title}
+                                            {t("features.instantPropertyValuation.title")}
                                         </h3>
                                         <p className="text-sm md:text-base text-muted-foreground max-w-md">
-                                            {FEATURES[3].description}
+                                            {t("features.instantPropertyValuation.description")}
                                         </p>
                                     </div>
                                 </AnimationContainer>

@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "Características",
+    "pricing": "Precios",
+    "contact": "Contacto"
+  },
+  "common": {
+    "getStarted": "Comenzar",
+    "dashboard": "Panel",
+    "startFreeTrial": "Iniciar prueba gratuita",
+    "joinCommunity": "Unirse a la comunidad"
+  },
+  "videoHero": {
+    "badge": "Convierte cada activo en ingresos diarios",
+    "title": "Compra, vende y gana con activos globales digitalmente",
+    "subtitle": "Desde bienes raíces hasta oro y acciones"
+  },
+  "hero": {
+    "badge": "Confiado por más de 10,000 usuarios",
+    "title": "Invierte en bienes raíces como acciones",
+    "description": "Acciones fraccionadas de bienes raíces impulsadas por automatización blockchain compatible. Comienza a invertir con lo que quieras.",
+    "trustedBy": "Confiado por líderes de la industria"
+  },
+  "cta": {
+    "badge": "Empezar ahora",
+    "title": "¿Comienza a construir tu cartera de bienes raíces hoy?",
+    "description": "Regístrate para una prueba gratuita y descubre cómo PropEase puede ayudarte a gestionar tus propiedades."
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "title": "Amado por profesionales inmobiliarios",
+    "subtitle": "Ve lo que nuestros usuarios tienen que decir sobre su experiencia con nuestra plataforma"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "Gestión inteligente de propiedades",
+      "description": "Gestiona múltiples propiedades sin esfuerzo con nuestro panel impulsado por IA. Rastrea pagos de alquiler y horarios de mantenimiento."
+    },
+    "realTimeAnalytics": {
+      "title": "Análisis en tiempo real",
+      "description": "Rastrea visualizaciones de propiedades, leads e ingresos a través de análisis en tiempo real."
+    },
+    "smartTransactionHub": {
+      "title": "Centro de transacciones inteligente",
+      "description": "Maneja transacciones de propiedades de forma segura en un solo lugar, desde ofertas hasta contratos digitales y pagos."
+    },
+    "instantPropertyValuation": {
+      "title": "Valoración instantánea de propiedades",
+      "description": "Obtén valoraciones de mercado en tiempo real impulsadas por IA y big data para decisiones de precios informadas."
+    }
+  }
+}
+

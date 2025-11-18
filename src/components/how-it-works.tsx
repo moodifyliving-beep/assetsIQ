@@ -1,27 +1,32 @@
+"use client";
+
 import { HOW_IT_WORKS } from "@/constants";
 import { cn } from "@/lib";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from './global/animation-container';
 import Wrapper from "./global/wrapper";
 import SectionBadge from "./ui/section-badge";
 
 const HowItWorks = () => {
+    const { t } = useLanguage();
+    
     return (
         <Wrapper className="py-20 lg:py-32 relative">
             <div className="flex flex-col items-center text-center gap-4 py-8 w-full">
                 <AnimationContainer animation="fadeUp" delay={0.2}>
-                    <SectionBadge title="How it works" />
+                    <SectionBadge title={t("howItWorks.badge")} />
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.3}>
                     <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-neutral-400">
-                        Three steps to success
+                        {t("howItWorks.title")}
                     </h1>
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.4}>
                     <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-lg mx-auto">
-                        Our three-step process simplifies real estate transactions and property management.
+                        {t("howItWorks.description")}
                     </p>
                 </AnimationContainer>
             </div>
@@ -29,7 +34,7 @@ const HowItWorks = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 w-full pt-10">
                 {HOW_IT_WORKS.map((item, index) => (
                     <AnimationContainer
-                        key={index}
+                        key={`how-it-works-${index}`}
                         animation="fadeUp"
                         delay={0.5 + (index * 0.2)}
                     >

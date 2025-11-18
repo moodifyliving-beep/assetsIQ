@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "contact": "Kontakt"
+  },
+  "common": {
+    "getStarted": "Loslegen",
+    "dashboard": "Dashboard",
+    "startFreeTrial": "Kostenlose Testversion starten",
+    "joinCommunity": "Community beitreten"
+  },
+  "videoHero": {
+    "badge": "Verwandeln Sie jedes Asset in tägliches Einkommen",
+    "title": "Kaufen, verkaufen und verdienen Sie mit globalen Assets digital",
+    "subtitle": "Von Immobilien bis Gold und Aktien"
+  },
+  "hero": {
+    "badge": "Vertraut von über 10.000 Benutzern",
+    "title": "Investieren Sie in Immobilien wie Aktien",
+    "description": "Gebrochene Immobilienanteile, angetrieben von konformer Blockchain-Automatisierung. Beginnen Sie mit so viel zu investieren, wie Sie möchten.",
+    "trustedBy": "Vertraut von Branchenführern"
+  },
+  "cta": {
+    "badge": "Jetzt starten",
+    "title": "Beginnen Sie noch heute mit dem Aufbau Ihres Immobilienportfolios?",
+    "description": "Melden Sie sich für eine kostenlose Testversion an und sehen Sie, wie PropEase Ihnen bei der Verwaltung Ihrer Immobilien helfen kann."
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "Geliebt von Immobilienprofis",
+    "subtitle": "Sehen Sie, was unsere Benutzer über ihre Erfahrung mit unserer Plattform zu sagen haben"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "Intelligente Immobilienverwaltung",
+      "description": "Verwalten Sie mehrere Immobilien mühelos mit unserem KI-gestützten Dashboard. Verfolgen Sie Mietzahlungen und Wartungspläne."
+    },
+    "realTimeAnalytics": {
+      "title": "Echtzeit-Analysen",
+      "description": "Verfolgen Sie Immobilienansichten, Leads und Umsätze durch Echtzeit-Analysen."
+    },
+    "smartTransactionHub": {
+      "title": "Intelligentes Transaktionszentrum",
+      "description": "Bearbeiten Sie Immobilientransaktionen sicher an einem Ort, von Angeboten bis zu digitalen Verträgen und Zahlungen."
+    },
+    "instantPropertyValuation": {
+      "title": "Sofortige Immobilienbewertung",
+      "description": "Erhalten Sie Echtzeit-Marktbewertungen, die von KI und Big Data angetrieben werden, für fundierte Preisentscheidungen."
+    }
+  }
+}
+

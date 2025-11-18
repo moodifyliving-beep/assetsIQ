@@ -88,7 +88,7 @@ const SecurityTrust = () => {
                         {securityFeatures.map((feature, index) => {
                             const IconComponent = feature.icon;
                             return (
-                                <AnimationContainer key={index} animation="fadeUp" delay={0.4 + index * 0.1}>
+                                <AnimationContainer key={`security-${index}`} animation="fadeUp" delay={0.4 + index * 0.1}>
                                     <div className="flex gap-4 items-start group">
                                         <div className="flex-shrink-0 mt-1">
                                             <motion.div

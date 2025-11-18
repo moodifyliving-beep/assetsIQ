@@ -6,141 +6,110 @@ import NumberFlow from '@number-flow/react';
 import { Check, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from './global/animation-container';
 import Wrapper from "./global/wrapper";
 import { Button } from "./ui/button";
 import SectionBadge from './ui/section-badge';
 
 const Pricing = () => {
-
+    const { t } = useLanguage();
     const [isYearly, setIsYearly] = useState<boolean>(false);
 
     return (
         <Wrapper className="py-20 lg:py-32">
             <div className="flex flex-col items-center text-center gap-4">
                 <AnimationContainer animation="fadeUp" delay={0.2}>
-                    <SectionBadge title="Pricing" />
+                    <SectionBadge title={t("pricing.badge")} />
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.3}>
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-neutral-400">
-                        Choose your perfect plan
+                        {t("pricing.title")}
                     </h2>
                 </AnimationContainer>
 
                 <AnimationContainer animation="fadeUp" delay={0.4}>
                     <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Select a plan that best suits your real estate business needs
+                        {t("pricing.description")}
                     </p>
                 </AnimationContainer>
             </div>
 
-            <AnimationContainer animation="fadeUp" delay={0.5}>
-                <div className="flex items-center justify-center gap-4 pt-10">
-                    <button
-                        onClick={() => setIsYearly(false)}
+            <div className="flex items-center justify-center gap-4 mt-8">
+                <span className={cn("text-sm", !isYearly && "font-medium")}>Monthly</span>
+                <button
+                    onClick={() => setIsYearly(!isYearly)}
+                    className={cn(
+                        "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
+                        isYearly ? "bg-primary" : "bg-neutral-700"
+                    )}
+                >
+                    <span
                         className={cn(
-                            "text-sm font-medium transition-colors",
-                            !isYearly ? "text-foreground" : "text-muted-foreground"
+                            "inline-block h-4 w-4 transform rounded-full bg-white transition-transform",
+                            isYearly ? "translate-x-6" : "translate-x-1"
                         )}
-                    >
-                        Monthly
-                    </button>
-                    <div
-                        onClick={() => setIsYearly(!isYearly)}
-                        className="h-6 w-11 rounded-full bg-neutral-800 p-1 cursor-pointer transition-colors duration-300"
-                    >
-                        <div
-                            className={cn(
-                                "h-4 w-4 rounded-full bg-gradient-to-b from-primary to-orange-400 transition-transform duration-300",
-                                isYearly && "translate-x-5"
-                            )}
-                        />
-                    </div>
-                    <button
-                        onClick={() => setIsYearly(true)}
-                        className={cn(
-                            "text-sm font-medium transition-colors",
-                            isYearly ? "text-foreground" : "text-muted-foreground"
-                        )}
-                    >
-                        Yearly
-                    </button>
-                </div>
-            </AnimationContainer>
+                    />
+                </button>
+                <span className={cn("text-sm", isYearly && "font-medium")}>Yearly</span>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                 {PRICING_PLANS.map((plan, index) => (
                     <AnimationContainer
-                        key={index}
+                        key={`pricing-${index}`}
                         animation="fadeUp"
-                        delay={0.6 + (index * 0.2)}
+                        delay={0.5 + (index * 0.1)}
                     >
                         <div
                             className={cn(
-                                "relative rounded-3xl backdrop-blur-3xl p-8 flex flex-col overflow-hidden",
-                                plan.popular && "bg-[#181818]",
-                                !plan.popular && "bg-gradient-to-b from-[#181818] to-[#101010]/0"
+                                "relative rounded-3xl bg-[#191919] backdrop-blur-3xl p-8 flex flex-col",
+                                plan.popular && "border-2 border-primary"
                             )}
                         >
                             {plan.popular && (
-                                <>
-                                    <div className="absolute inset-x-0 mx-auto -top-1/8 size-40 rounded-full bg-primary -z-10 blur-[5rem]" />
-                                    <div className="absolute top-0 w-4/5 mx-auto inset-x-0 h-px bg-gradient-to-r from-primary/0 via-primary to-primary/0"></div>
-                                </>
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-medium rounded-full">
+                                    {t("pricing.popular")}
+                                </div>
                             )}
 
-                            <AnimationContainer animation="fadeUp" delay={0.7 + (index * 0.2)}>
-                                <div className="mb-8">
-                                    <h3 className="text-xl font-medium mb-2">{plan.name}</h3>
-                                    <p className="text-sm text-muted-foreground">{plan.description}</p>
+                            <div className="flex flex-col gap-4 mb-8">
+                                <h3 className="text-xl font-medium">{plan.name}</h3>
+                                <div className="flex items-baseline gap-2">
+                                    <NumberFlow
+                                        value={isYearly ? plan.price.yearly : plan.price.monthly}
+                                        format={(value) => `$${Math.round(value)}`}
+                                        className="text-4xl font-bold"
+                                    />
+                                    <span className="text-muted-foreground">/{isYearly ? t("pricing.perYear") : t("pricing.perMonth")}</span>
                                 </div>
-                            </AnimationContainer>
-
-                            <AnimationContainer animation="fadeUp" delay={0.8 + (index * 0.2)}>
-                                <div className="flex items-baseline gap-2 mb-8">
-                                    <span className="text-4xl font-medium">$</span>
-                                    <span className="text-5xl font-medium">
-                                        <NumberFlow
-                                            value={isYearly ? plan.price.yearly : plan.price.monthly}
-                                        />
-                                    </span>
-                                    <span className="text-muted-foreground">/{isYearly ? 'year' : 'month'}</span>
-                                </div>
-                            </AnimationContainer>
-
-                            <div className="flex-1">
-                                <AnimationContainer animation="fadeUp" delay={0.9 + (index * 0.2)}>
-                                    <ul className="space-y-4 mb-8">
-                                        {plan.features.map((feature, featureIndex) => (
-                                            <li key={featureIndex} className="flex items-center gap-3">
-                                                {feature.included ? (
-                                                    <Check className="w-5 h-5 text-primary" />
-                                                ) : (
-                                                    <X className="w-5 h-5 text-muted-foreground" />
-                                                )}
-                                                <span className={cn(
-                                                    "text-sm",
-                                                    feature.included ? "text-foreground" : "text-muted-foreground"
-                                                )}>
-                                                    {feature.text}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </AnimationContainer>
+                                <p className="text-sm text-muted-foreground">{plan.description}</p>
                             </div>
 
-                            <AnimationContainer animation="fadeUp" delay={1 + (index * 0.2)}>
-                                <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
-                                    <Button
-                                        variant={plan.popular ? "default" : "secondary"}
-                                        className="w-full"
-                                    >
-                                        Get Started
-                                    </Button>
-                                </Link>
-                            </AnimationContainer>
+                            <ul className="space-y-4 mb-8">
+                                {plan.features.map((feature, featureIndex) => (
+                                    <li key={`feature-${index}-${featureIndex}`} className="flex items-center gap-3">
+                                        {feature.included ? (
+                                            <Check className="w-5 h-5 text-primary" />
+                                        ) : (
+                                            <X className="w-5 h-5 text-muted-foreground" />
+                                        )}
+                                        <span className={cn("text-sm", !feature.included && "text-muted-foreground line-through")}>
+                                            {feature.text}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer" className="mt-auto">
+                                <Button
+                                    variant={plan.popular ? "default" : "outline"}
+                                    className="w-full"
+                                >
+                                    {t("common.getStarted")}
+                                </Button>
+                            </Link>
                         </div>
                     </AnimationContainer>
                 ))}

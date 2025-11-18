@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/language-context";
 import AnimationContainer from "./global/animation-container";
 import Images from "./global/images";
 import Wrapper from "./global/wrapper";
@@ -8,7 +11,8 @@ import Marquee from "./ui/marquee";
 import SectionBadge from "./ui/section-badge";
 
 const Hero = () => {
-
+    const { t } = useLanguage();
+    
     const companies = [
         Images.comp1,
         Images.comp2,
@@ -24,18 +28,18 @@ const Hero = () => {
                 <div className="flex flex-col items-start gap-10 py-8 w-full">
                     <div className="flex flex-col items-start gap-4">
                         <AnimationContainer animation="fadeUp" delay={0.2}>
-                            <SectionBadge title="Trusted by 10,000+ Users" />
+                            <SectionBadge title={t("hero.badge")} />
                         </AnimationContainer>
 
                         <AnimationContainer animation="fadeUp" delay={0.4}>
                             <h1 className="text-5xl lg:text-6xl font-medium !leading-tight text-transparent bg-clip-text bg-gradient-to-r from-foreground to-neutral-500">
-                            Invest in Real Estate Like Stocks
+                            {t("hero.title")}
                             </h1>
                         </AnimationContainer>
 
                         <AnimationContainer animation="fadeUp" delay={0.6}>
                             <p className="text-sm md:text-base lg:text-lg text-muted-foreground">
-                            Fractional real estate shares powered by compliant blockchain automation. Start investing with as little as you want.
+                            {t("hero.description")}
                             </p>
                         </AnimationContainer>
                     </div>
@@ -44,7 +48,7 @@ const Hero = () => {
                         <div className="w-full">
                             <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                 <Button size="md" className="w-full md:w-auto">
-                                    Start free trial
+                                    {t("common.startFreeTrial")}
                                 </Button>
                             </Link>
                         </div>
@@ -53,12 +57,12 @@ const Hero = () => {
                     <AnimationContainer animation="fadeUp" delay={1}>
                         <div className="flex flex-col items-start gap-4 py-4">
                             <p className="text-sm md:text-base text-muted-foreground">
-                                Trusted by Industry Leaders
+                                {t("hero.trustedBy")}
                             </p>
                             <div className="w-full relative max-w-[calc(100vw-2rem)] lg:max-w-lg">
                                 <Marquee className="[--duration:40s] select-none [--gap:2rem]">
                                     {[...Array(10)].map((_, index) => (
-                                        <div key={index} className="flex items-center justify-center text-muted-foreground h-16">
+                                        <div key={`company-${index}`} className="flex items-center justify-center text-muted-foreground h-16">
                                             {companies[index % companies.length]({ className: "w-auto h-5" })}
                                         </div>
                                     ))}

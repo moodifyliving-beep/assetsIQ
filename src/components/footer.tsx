@@ -71,7 +71,7 @@ const Footer = () => {
                             <div className="flex items-center gap-4 mt-6">
                                 {SOCIAL_LINKS.map((social, index) => (
                                     <AnimationContainer
-                                        key={index}
+                                        key={`social-${index}`}
                                         animation="fadeUp"
                                         delay={0.6 + (index * 0.1)}
                                     >
@@ -95,7 +95,7 @@ const Footer = () => {
                                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                         {PRODUCT_LINKS.map((link, index) => (
                                             <AnimationContainer
-                                                key={index}
+                                                key={`product-${index}`}
                                                 animation="fadeLeft"
                                                 delay={0.6 + (index * 0.1)}
                                             >
@@ -119,7 +119,7 @@ const Footer = () => {
                                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                         {RESOURCES_LINKS.map((link, index) => (
                                             <AnimationContainer
-                                                key={index}
+                                                key={`resource-${index}`}
                                                 animation="fadeLeft"
                                                 delay={0.7 + (index * 0.1)}
                                             >
@@ -144,7 +144,7 @@ const Footer = () => {
                                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                     {COMPANY_LINKS.map((link, index) => (
                                         <AnimationContainer
-                                            key={index}
+                                            key={`company-${index}`}
                                             animation="fadeLeft"
                                             delay={0.8 + (index * 0.1)}
                                         >

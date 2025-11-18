@@ -12,9 +12,11 @@ import { RefObject, useRef, useState } from "react";
 import AnimationContainer from "./global/animation-container";
 import Icons from "./global/icons";
 import Wrapper from "./global/wrapper";
+import LanguageSwitcherSimple from "./language-switcher-simple";
+import { useLanguage } from "@/contexts/language-context";
 
 const Navbar = () => {
-
+    const { t } = useLanguage();
     const { user } = useClerk();
 
     const ref = useRef<HTMLDivElement | null>(null);
@@ -72,34 +74,43 @@ const Navbar = () => {
 
                     <div className="hidden lg:flex flex-row flex-1 absolute inset-0 items-center justify-center w-max mx-auto gap-x-2 text-sm text-muted-foreground font-medium">
                         <AnimatePresence>
-                            {NAV_LINKS.map((link, index) => (
-                                <AnimationContainer
-                                    key={index}
-                                    animation="fadeDown"
-                                    delay={0.1 * index}
-                                >
-                                    <div className="relative">
-                                        <Link href={link.link} className="hover:text-foreground transition-all duration-500 hover:bg-accent rounded-md px-4 py-2">
-                                            {link.name}
-                                        </Link>
-                                    </div>
-                                </AnimationContainer>
-                            ))}
+                            <AnimationContainer animation="fadeDown" delay={0.1 * 0}>
+                                <div className="relative">
+                                    <Link href="#features" className="hover:text-foreground transition-all duration-500 hover:bg-accent rounded-md px-4 py-2">
+                                        {t("nav.features")}
+                                    </Link>
+                                </div>
+                            </AnimationContainer>
+                            <AnimationContainer animation="fadeDown" delay={0.1 * 1}>
+                                <div className="relative">
+                                    <Link href="#pricing" className="hover:text-foreground transition-all duration-500 hover:bg-accent rounded-md px-4 py-2">
+                                        {t("nav.pricing")}
+                                    </Link>
+                                </div>
+                            </AnimationContainer>
+                            <AnimationContainer animation="fadeDown" delay={0.1 * 2}>
+                                <div className="relative">
+                                    <Link href="#contact" className="hover:text-foreground transition-all duration-500 hover:bg-accent rounded-md px-4 py-2">
+                                        {t("nav.contact")}
+                                    </Link>
+                                </div>
+                            </AnimationContainer>
                         </AnimatePresence>
                     </div>
 
                     <AnimationContainer animation="fadeLeft" delay={0.1}>
                         <div className="flex items-center gap-x-4">
+                            <LanguageSwitcherSimple />
                             {user ? (
                                 <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer">
                                     <Button>
-                                        Dashboard
+                                        {t("common.dashboard")}
                                     </Button>
                                 </Link>
                             ) : (
                                 <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button size="sm">
-                                        Get started
+                                        {t("common.getStarted")}
                                     </Button>
                                 </Link>
                             )}
@@ -138,9 +149,10 @@ const Navbar = () => {
 
                         <AnimationContainer animation="fadeLeft" delay={0.1}>
                             <div className="flex items-center justify-center gap-x-4">
+                                <LanguageSwitcherSimple />
                                 <Link href="https://asset-iq.vercel.app/signup" target="_blank" rel="noopener noreferrer">
                                     <Button size="sm">
-                                        Get started
+                                        {t("common.getStarted")}
                                     </Button>
                                 </Link>
                                 {open ? (
@@ -168,22 +180,33 @@ const Navbar = () => {
                             exit={{ opacity: 0 }}
                             className="flex rounded-b-xl absolute top-16 bg-neutral-950 inset-x-0 z-50 flex-col items-start justify-start gap-2 w-full px-4 py-8 shadow-xl shadow-neutral-950"
                         >
-                            {NAV_LINKS.map((navItem: any, idx: number) => (
-                                <AnimationContainer
-                                    key={`link=${idx}`}
-                                    animation="fadeRight"
-                                    delay={0.1 * (idx + 1)}
-                                    className="w-full"
+                            <AnimationContainer animation="fadeRight" delay={0.1 * 1} className="w-full">
+                                <Link
+                                    href="#features"
+                                    onClick={() => setOpen(false)}
+                                    className="relative text-neutral-300 hover:bg-neutral-800 w-full px-4 py-2 rounded-lg"
                                 >
-                                    <Link
-                                        href={navItem.link}
-                                        onClick={() => setOpen(false)}
-                                        className="relative text-neutral-300 hover:bg-neutral-800 w-full px-4 py-2 rounded-lg"
-                                    >
-                                        <motion.span>{navItem.name}</motion.span>
-                                    </Link>
-                                </AnimationContainer>
-                            ))}
+                                    <motion.span>{t("nav.features")}</motion.span>
+                                </Link>
+                            </AnimationContainer>
+                            <AnimationContainer animation="fadeRight" delay={0.1 * 2} className="w-full">
+                                <Link
+                                    href="#pricing"
+                                    onClick={() => setOpen(false)}
+                                    className="relative text-neutral-300 hover:bg-neutral-800 w-full px-4 py-2 rounded-lg"
+                                >
+                                    <motion.span>{t("nav.pricing")}</motion.span>
+                                </Link>
+                            </AnimationContainer>
+                            <AnimationContainer animation="fadeRight" delay={0.1 * 3} className="w-full">
+                                <Link
+                                    href="#contact"
+                                    onClick={() => setOpen(false)}
+                                    className="relative text-neutral-300 hover:bg-neutral-800 w-full px-4 py-2 rounded-lg"
+                                >
+                                    <motion.span>{t("nav.contact")}</motion.span>
+                                </Link>
+                            </AnimationContainer>
                             <AnimationContainer animation="fadeUp" delay={0.5} className="w-full">
                                 {user ? (
                                     <Link href="https://asset-iq.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full">
@@ -192,7 +215,7 @@ const Navbar = () => {
                                             variant="default"
                                             className="block md:hidden w-full"
                                         >
-                                            Dashboard
+                                            {t("common.dashboard")}
                                         </Button>
                                     </Link>
                                 ) : (
@@ -202,7 +225,7 @@ const Navbar = () => {
                                             variant="default"
                                             className="block md:hidden w-full"
                                         >
-                                            Get started
+                                            {t("common.getStarted")}
                                         </Button>
                                     </Link>
                                 )}

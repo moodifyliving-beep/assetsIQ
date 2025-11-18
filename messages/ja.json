@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "機能",
+    "pricing": "料金",
+    "contact": "お問い合わせ"
+  },
+  "common": {
+    "getStarted": "始める",
+    "dashboard": "ダッシュボード",
+    "startFreeTrial": "無料トライアルを開始",
+    "joinCommunity": "コミュニティに参加"
+  },
+  "videoHero": {
+    "badge": "すべての資産を毎日の収入に変える",
+    "title": "グローバル資産をデジタルで購入、販売、収益化",
+    "subtitle": "不動産から金と株式まで"
+  },
+  "hero": {
+    "badge": "10,000人以上のユーザーに信頼されています",
+    "title": "株式のように不動産に投資",
+    "description": "準拠したブロックチェーン自動化を搭載した分割不動産株式。お好みの金額で投資を始められます。",
+    "trustedBy": "業界リーダーに信頼されています"
+  },
+  "cta": {
+    "badge": "今すぐ始める",
+    "title": "今日から不動産ポートフォリオを構築しませんか？",
+    "description": "無料トライアルに登録して、ProPEaseが物件管理をどのようにサポートするかご確認ください。"
+  },
+  "testimonials": {
+    "badge": "お客様の声",
+    "title": "不動産の専門家に愛されています",
+    "subtitle": "当社のプラットフォームでの体験について、ユーザーの声をご覧ください"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "スマート物件管理",
+      "description": "AI搭載ダッシュボードで複数の物件を簡単に管理。家賃の支払いとメンテナンススケジュールを追跡します。"
+    },
+    "realTimeAnalytics": {
+      "title": "リアルタイム分析",
+      "description": "リアルタイム分析を通じて物件の閲覧数、リード、収益を追跡します。"
+    },
+    "smartTransactionHub": {
+      "title": "スマート取引ハブ",
+      "description": "オファーからデジタル契約、支払いまで、1つの場所で安全に物件取引を処理します。"
+    },
+    "instantPropertyValuation": {
+      "title": "即時物件評価",
+      "description": "AIとビッグデータを活用したリアルタイム市場評価を取得し、情報に基づいた価格決定を行います。"
+    }
+  }
+}
+

@@ -37,7 +37,7 @@ const Testimonials = () => {
                     <Marquee className="[--gap:1.5rem]" pauseOnHover>
                         {TESTIMONIALS.map((testimonial, index) => (
                             <AnimationContainer
-                                key={index}
+                                key={`testimonial-${index}`}
                                 animation="fadeUp"
                                 delay={0.6 + (index * 0.1)}
                             >
@@ -76,7 +76,7 @@ const Testimonials = () => {
                                             <div className="flex gap-1">
                                                 {[...Array(testimonial.rating)].map((_, i) => (
                                                     <Star
-                                                        key={i}
+                                                        key={`star-${index}-${i}`}
                                                         className="w-5 h-5 fill-primary text-primary"
                                                     />
                                                 ))}

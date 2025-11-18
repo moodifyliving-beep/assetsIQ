@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "pricing": "Preços",
+    "contact": "Contato"
+  },
+  "common": {
+    "getStarted": "Começar",
+    "dashboard": "Painel",
+    "startFreeTrial": "Iniciar teste gratuito",
+    "joinCommunity": "Juntar-se à comunidade"
+  },
+  "videoHero": {
+    "badge": "Transforme cada ativo em renda diária",
+    "title": "Compre, venda e ganhe com ativos globais digitalmente",
+    "subtitle": "De imóveis a ouro e ações"
+  },
+  "hero": {
+    "badge": "Confiado por mais de 10.000 usuários",
+    "title": "Invista em imóveis como ações",
+    "description": "Ações imobiliárias fracionadas alimentadas por automação blockchain compatível. Comece a investir com o quanto quiser.",
+    "trustedBy": "Confiado por líderes da indústria"
+  },
+  "cta": {
+    "badge": "Começar agora",
+    "title": "Comece a construir seu portfólio imobiliário hoje?",
+    "description": "Inscreva-se para um teste gratuito e veja como o PropEase pode ajudá-lo a gerenciar suas propriedades."
+  },
+  "testimonials": {
+    "badge": "Depoimentos",
+    "title": "Amado por profissionais imobiliários",
+    "subtitle": "Veja o que nossos usuários têm a dizer sobre sua experiência com nossa plataforma"
+  },
+  "features": {
+    "smartPropertyManagement": {
+      "title": "Gestão inteligente de propriedades",
+      "description": "Gerencie várias propriedades sem esforço com nosso painel alimentado por IA. Acompanhe pagamentos de aluguel e cronogramas de manutenção."
+    },
+    "realTimeAnalytics": {
+      "title": "Análises em tempo real",
+      "description": "Acompanhe visualizações de propriedades, leads e receita através de análises em tempo real."
+    },
+    "smartTransactionHub": {
+      "title": "Hub de transações inteligente",
+      "description": "Lide com transações imobiliárias com segurança em um só lugar, de ofertas a contratos digitais e pagamentos."
+    },
+    "instantPropertyValuation": {
+      "title": "Avaliação instantânea de propriedades",
+      "description": "Obtenha avaliações de mercado em tempo real alimentadas por IA e big data para decisões de preços informadas."
+    }
+  }
+}
+

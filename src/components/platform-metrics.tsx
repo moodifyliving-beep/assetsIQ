@@ -43,7 +43,7 @@ const PlatformMetrics = () => {
                 <div className="flex flex-col gap-6 px-1 md:px-0">
                     {METRICS.map((metric, index) => (
                         <AnimationContainer
-                            key={index}
+                            key={`metric-${index}`}
                             animation={metric.reverse ? "fadeLeft" : "fadeRight"}
                             delay={0.6 + (index * 0.2)}
                         >

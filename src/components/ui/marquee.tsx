@@ -1,5 +1,5 @@
 import { cn } from "@/lib";
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, cloneElement, isValidElement, Children } from "react";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
     /**
@@ -55,9 +55,9 @@ export default function Marquee({
         >
             {Array(repeat)
                 .fill(0)
-                .map((_, i) => (
+                .map((_, repeatIndex) => (
                     <div
-                        key={i}
+                        key={`marquee-repeat-${repeatIndex}`}
                         className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
                             "animate-marquee flex-row": !vertical,
                             "animate-marquee-vertical flex-col": vertical,
@@ -65,7 +65,30 @@ export default function Marquee({
                             "[animation-direction:reverse]": reverse,
                         })}
                     >
-                        {children}
+                        {Children.map(children, (child, childIndex) => {
+                            if (isValidElement(child)) {
+                                // Clone child with a unique key that includes the repeat index
+                                // Always create a unique key combining repeat index and child index
+                                const originalKey = child.key;
+                                const uniqueKey = originalKey != null && originalKey !== ''
+                                    ? `marquee-r${repeatIndex}-c${childIndex}-${String(originalKey)}` 
+                                    : `marquee-r${repeatIndex}-c${childIndex}`;
+                                
+                                // Create a new element with the unique key
+                                return cloneElement(child, {
+                                    key: uniqueKey,
+                                } as any);
+                            }
+                            // For non-element children (text, numbers, etc.), wrap them with a unique key
+                            if (child != null && child !== false) {
+                                return (
+                                    <span key={`marquee-r${repeatIndex}-t${childIndex}`} style={{ display: 'contents' }}>
+                                        {child}
+                                    </span>
+                                );
+                            }
+                            return null;
+                        })}
                     </div>
                 ))}
         </div>
